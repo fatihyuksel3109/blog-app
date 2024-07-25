@@ -1,5 +1,6 @@
 "use client";
 import { assets, blog_data } from '@/assets/assets';
+import Footer from '@/components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
@@ -70,6 +71,7 @@ const Page = ( {params} ) => {
         </div>
       </div>
     </div>
+    <Footer />
     </>: <></>
   )
 }

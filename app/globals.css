@@ -2,8 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    max-width: 1440px;
-    margin: auto;
-}
-
