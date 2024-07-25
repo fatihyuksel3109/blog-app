@@ -64,10 +64,10 @@ const Page = ( {params} ) => {
       <p className='my-3'>Staying updated with the latest tools and continuously refining one&apos;s toolkit is a proactive approach to thriving in the competitive freelancing landscape.</p>
       <div className='my-24'>
         <p className='text-black font font-semibold my-4'>Share this article on social media</p>
-        <div className='flex gap-1'>
-          <Image src={assets.facebook_icon_dark} alt='' width={40} />
-          <Image src={assets.x_icon_dark} alt='' width={40} />
-          <Image src={assets.googleplus_icon_dark} alt='' width={40} />
+        <div className='flex gap-4'>
+          <Link href={'https://www.facebook.com'} className='hover:scale-150 transition-all duration-300'><Image src={assets.facebook_icon_dark} alt='' width={40} /></Link>
+          <Link href={'https://www.x.com'} className='hover:scale-150 transition-all duration-150'><Image src={assets.x_icon_dark} alt='' width={40} /></Link>
+          <Link href={'https://www.googleplus.com'} className='hover:scale-150 transition-all duration-150'><Image src={assets.googleplus_icon_dark} alt='' width={40} /></Link>
         </div>
       </div>
     </div>
