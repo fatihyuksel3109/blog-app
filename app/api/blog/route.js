@@ -28,10 +28,10 @@ export async function POST(request) {
     const blogData = {
         title: `${formData.get('title')}`,
         description: `${formData.get('description')}`,
-        inscription: `${formData.get('inscription')}`,
+        introduction: `${formData.get('introduction')}`,
         category: `${formData.get('category')}`,
         author: `${formData.get('author')}`,
-        image: `${'imgUrl'}`,
+        image: `${imgUrl}`,
         author_image: `${formData.get('author_image')}`,
     }
 

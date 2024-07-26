@@ -16,7 +16,7 @@ import blog_pic_19 from './blog_pic_lifestyle_3.avif';
 import blog_pic_20 from './blog_pic_lifestyle_4.avif';
 import facebook_icon from './facebook.png';
 import facebook_icon_dark from './facebook_dark.png';
-import email_icon from './email.webp';
+import email_icon from './email.png';
 import x_icon from './x_icon.png';
 import x_icon_dark from './x_icon_dark.png';
 import googleplus_icon from './googleplus_icon.png';
