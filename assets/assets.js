@@ -29,6 +29,7 @@ import upload_icon from './upload_icon.png';
 import logo from './logo.png';
 import logo_light from './logo_light.png';
 import logo_gray from './logo_gray.png';
+import logo_admin from './logo_admin.png';
 
 
 export const assets = {
@@ -47,6 +48,7 @@ export const assets = {
     email_icon,
     upload_icon,
     logo_gray,
+    logo_admin,
 }
 export const blog_data = [
     {
