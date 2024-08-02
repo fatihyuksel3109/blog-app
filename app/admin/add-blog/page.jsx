@@ -45,8 +45,16 @@ const Page = () => {
           },
         }).then(response => {
           if (response.data.success) {
-            // Resolve the toast promise with the success message
-            return response.data.msg;
+            toast.success(response.data.msg);
+            setImage(false);
+            setData({
+              title: '',
+              introduction: '',
+              description: '',
+              category: 'Technology',
+              author: 'Thomas Bennett',
+              author_image: '/author_image.jpg',          
+            })
           } else {
             // Reject the toast promise with the error message
             throw new Error('Error: ' + response.data.msg);
@@ -58,13 +66,12 @@ const Page = () => {
           error: 'An error occurred while submitting the form',
         }
       );
-      // Delay the redirection to allow the success toast to be visible
+      
       setTimeout(() => {
         router.push('/');
-      }, 2500); // 2000ms = 2 seconds
+      }, 2000); 
     } catch (error) {
       console.error('There was an error!', error);
-      // Toastify will handle error display, so no additional action needed here
     }
   };
 
