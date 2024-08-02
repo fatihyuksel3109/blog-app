@@ -56,7 +56,7 @@ const Page = () => {
               author_image: '/author_image.jpg',          
             })
           } else {
-            // Reject the toast promise with the error message
+
             throw new Error('Error: ' + response.data.msg);
           }
         }),
