@@ -14,7 +14,7 @@ const Page = () => {
     description: '',
     category: 'Technology',
     author: 'Thomas Bennett',
-    author_image: '/author_image.jpg',
+    author_image: '/authorImg.jpg',
   });
 
   const router = useRouter();
@@ -53,7 +53,7 @@ const Page = () => {
               description: '',
               category: 'Technology',
               author: 'Thomas Bennett',
-              author_image: '/author_image.jpg',          
+              author_image: '/authorImg.jpg',          
             })
           } else {
 
