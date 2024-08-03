@@ -2,7 +2,11 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
 
-const BlogTableItem = ({ author_image, title, author }) => {
+const BlogTableItem = ({ author_image, title, author, date }) => {
+
+  const dateStr = "2024-08-02T14:03:12.867+00:00";
+  const BlogDate = new Date(dateStr);
+
   return (
     <tr className="bg-white border-b">
       <th
@@ -13,7 +17,7 @@ const BlogTableItem = ({ author_image, title, author }) => {
         <p>{author ? author : 'No author'}</p>
       </th>
       <td className="px-6 py-4">{title ? title : "No blog title"}</td>
-      <td className="px-6 py-4">{"01 Sep 2024"}</td>
+      <td className="px-6 py-4">{BlogDate.toDateString()}</td>
       <td className="px-6 py-4 cursor-pointer">x</td>
     </tr>
   );
