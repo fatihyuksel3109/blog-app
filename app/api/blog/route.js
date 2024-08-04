@@ -63,10 +63,10 @@ export async function POST(request) {
 
 // API Endpoint to DELETE blog
 
-export async function Delete(request) {
+export async function DELETE(request) {
     const id = await request.nextUrl.searchParams.get('id');
     const Blog = await BlogModel.findById(id);
     fs.unlink(`./public${Blog.image}`, () => {})
-    await BlogModel.findByIdAndDelete('id');
+    await BlogModel.findByIdAndDelete(id);
     return NextResponse.json({msg: 'Blog Deleted'});
 } 

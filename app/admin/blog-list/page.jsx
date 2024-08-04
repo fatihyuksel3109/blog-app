@@ -5,26 +5,25 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const Page = () => {
-
   const [blogs, setBlogs] = useState([]);
 
   const fetchBlogs = async () => {
-    const response = await axios.get('/api/blog');
+    const response = await axios.get("/api/blog");
 
     setBlogs(response.data.blogs);
   };
 
   const DeleteBlog = async (mongoId) => {
-    const response = await axios.delete('/api/blog', {
-      id : mongoId
+    const response = await axios.delete("/api/blog", {
+      params: { id: mongoId },
     });
     toast.success(response.data.msg);
     fetchBlogs();
-  }
+  };
 
   useEffect(() => {
     fetchBlogs();
-  }, [])
+  }, []);
 
   return (
     <div className="flex-1 pt-5 px-5 sm:pt-12 sm:pl-16">
@@ -47,7 +46,16 @@ const Page = () => {
           </thead>
           <tbody>
             {blogs.map((item, index) => {
-              return <BlogTableItem key={index} deleteBlog={DeleteBlog} mongoId={item._id} author={item.author} author_image={item.author_image} title={item.title} />
+              return (
+                <BlogTableItem
+                  key={index}
+                  deleteBlog={DeleteBlog}
+                  mongoId={item._id}
+                  author={item.author}
+                  author_image={item.author_image}
+                  title={item.title}
+                />
+              );
             })}
           </tbody>
         </table>

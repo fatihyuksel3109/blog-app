@@ -68,7 +68,7 @@ const Page = () => {
       );
       
       setTimeout(() => {
-        router.push('/');
+        router.push('/admin/blog-list');
       }, 2000); 
     } catch (error) {
       console.error('There was an error!', error);
