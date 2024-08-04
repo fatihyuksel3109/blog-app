@@ -54,6 +54,7 @@ const Page = () => {
                   author={item.author}
                   author_image={item.author_image}
                   title={item.title}
+                  date={item.date}
                 />
               );
             })}
