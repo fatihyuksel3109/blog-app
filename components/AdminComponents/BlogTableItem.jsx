@@ -2,9 +2,9 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
 
-const BlogTableItem = ({ author_image, title, author, date }) => {
+const BlogTableItem = ({ author_image, title, author, date, deleteBlog, mongoId}) => {
 
-  const dateStr = "2024-08-02T14:03:12.867+00:00";
+  const dateStr = date;
   const BlogDate = new Date(dateStr);
 
   return (
@@ -18,7 +18,7 @@ const BlogTableItem = ({ author_image, title, author, date }) => {
       </th>
       <td className="px-6 py-4">{title ? title : "No blog title"}</td>
       <td className="px-6 py-4">{BlogDate.toDateString()}</td>
-      <td className="px-6 py-4 cursor-pointer">x</td>
+      <td onClick={() => deleteBlog(mongoId)} className="px-6 py-4 cursor-pointer">x</td>
     </tr>
   );
 };
