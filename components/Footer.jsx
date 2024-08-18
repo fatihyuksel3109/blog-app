@@ -1,5 +1,6 @@
 import { assets } from '@/assets/assets'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function Footer() {
@@ -11,9 +12,9 @@ function Footer() {
         
         </div>
         <div className='flex gap-1'>
-          <Image src={assets.facebook_icon} alt='' width={40} />
-          <Image src={assets.x_icon} alt='' width={40} />
-          <Image src={assets.googleplus_icon} alt='' width={40} />
+          <Link href={'https://www.linkedin.com/in/fatihyuksell'}><Image className='rounded-full p-1'  src={assets.linkedin_icon_dark} alt='' width={40} /></Link>
+          <Link href={'https://x.com/fyukseI'}><Image className='rounded-full p-1'  src={assets.x_icon} alt='' width={40} /></Link>
+          <Link href={'https://www.instagram.com/byfatihyuksel'}><Image className='rounded-full p-1'  src={assets.instagram_dark} alt='' width={40} /></Link>
         </div>
     </footer>
   )
