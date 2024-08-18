@@ -6,7 +6,7 @@ import React from 'react'
 function Footer() {
   return (
     <footer className=' flex justify-around flex-col gap-2 sm:gap-0 sm:flex-row bg-black py-5 items-center' >
-        <Image src={assets.logo_light} alt='Logo' width={120} />
+        <Link href={'/'}><Image src={assets.logo_light} alt='Logo' width={120} /></Link>
         <div className='text-xs text-white'>
         <p>© 2024 Fatih&apos;s Blog. Developed by fatihyuksel. All rights reserverd.</p>
         

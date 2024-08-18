@@ -25,12 +25,14 @@
     margin-bottom: 14px;
     font-weight: 550;
     font-size: 28px;
+    color: rgb(60, 60, 60);
 }
 
 .blog-content h3 {
     margin-bottom: 10px;
     font-weight: 500;
     font-size: 24px;
+    color: rgb(75, 75, 75);
 }
 
 .blog-content p {

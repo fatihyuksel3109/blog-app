@@ -13,8 +13,8 @@ const Page = () => {
     introduction: '',
     description: '',
     category: 'Technology',
-    author: 'Thomas Bennett',
-    author_image: '/authorImg.jpg',
+    author: 'Fatih Yuksel',
+    author_image: '/admin-profile.png',
   });
 
   const router = useRouter();
@@ -52,8 +52,8 @@ const Page = () => {
               introduction: '',
               description: '',
               category: 'Technology',
-              author: 'Thomas Bennett',
-              author_image: '/authorImg.jpg',          
+              author: 'Fatih Yuksel',
+              author_image: '/admin-profile.png',          
             })
           } else {
 
