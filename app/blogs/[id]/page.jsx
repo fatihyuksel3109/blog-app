@@ -35,9 +35,10 @@ const Page = ({ params }) => {
           <Link href={'/'}>
             <Image src={assets.logo_gray} width={180} alt='' className='w-32 sm:w-auto' />
           </Link>
-          <button className='flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-black shadow-[-7px_7px_7px_0px_#0000000]'>
-            Get started <Image src={assets.arrow_icon} alt='' width={12} />
-          </button>
+          <button className='flex items-center gap-1 hover:scale-105 transition-transform duration-300 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000] active:bg-gray-200'>
+          Get started
+          <Image src={assets.arrow_icon} width={12} height={12} alt='arrow icon' />
+        </button>
         </div>
         <div className='text-center my-24'>
           <h1 className='text-2xl sm:text-5xl font-semibold max-w-2xl mx-auto'>{data.title}</h1>
