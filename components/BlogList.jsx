@@ -11,7 +11,10 @@ function BlogList() {
     const fetchBlogs = async () => {
       
       const response = await axios.get('/api/blog');
-      setBlogs(response.data.blogs);
+      const sortedBlogs = response.data.blogs.sort((a, b) => 
+        new Date(b.date) - new Date(a.date)
+      );
+      setBlogs(sortedBlogs);
     };
 
     useEffect(() => {
@@ -29,7 +32,7 @@ function BlogList() {
         <div className="flex flex-wrap justify-around gap-1 gap-y-10 mb-16 xl:mx-24 ">
             {
                 blogs.filter((item) => menu === 'All' ? true : item.category === menu ).map((item, index) => {
-                  return  <BlogItem key={index} id={item._id} image={item.image} title={item.title} introduction={item.introduction} category={item.category} />
+                  return  <BlogItem key={index} id={item._id} image={item.image} title={item.title} introduction={item.introduction} category={item.category} date={item.date} />
                 })
             }
         </div>

@@ -3,7 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-function BlogItem({image, category, title, introduction, id}) {
+function BlogItem({image, category, title, introduction, id, date}) {
+  // Format the date
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('en-US', options);
+  };
+
   return (
     <div className='max-w-xs sm:max-w-72 bg-white border border-black hover:shadow-[-7px_7px_0px_#000000] hover:scale-105 transition-all duration-300'>
         <Link href={`/blogs/${id}`}>
@@ -17,11 +23,14 @@ function BlogItem({image, category, title, introduction, id}) {
                 {title}
             </h5>
             <p className='mb-3 text-sm min-h-14 tracking-tight text-gray-600'>
-                {introduction }
+                {introduction}
             </p>
-            <Link href={`/blogs/${id}`} className="inline-flex items-center py-2 font-semibold text-center gap-1">
-                Read More <Image src={assets.arrow_icon} alt='arrow icon' width={12} />
-            </Link>
+            <div className="flex justify-between items-center">
+                <Link href={`/blogs/${id}`} className="inline-flex items-center py-2 font-semibold text-center gap-1">
+                    Read More <Image src={assets.arrow_icon} alt='arrow icon' width={12} />
+                </Link>
+                <span className="text-sm text-gray-500">{formatDate(date)}</span>
+            </div>
         </div>
     </div>
   )
