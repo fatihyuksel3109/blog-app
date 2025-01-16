@@ -26,54 +26,62 @@ const Page = () => {
   };
 
   const onSubmitHandler = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('title', data.title);
-    formData.append('introduction', data.introduction);
-    formData.append('description', data.description);
-    formData.append('category', data.category);
-    formData.append('author', data.author);
-    formData.append('author_image', data.author_image);
-    formData.append('image', image);
+  e.preventDefault();
 
-    try {
-      // Show a pending toast while the request is being processed
-      await toast.promise(
-        axios.post('/api/blog', formData, {
+  const formData = new FormData();
+
+  formData.append('title', data.title);
+  formData.append('introduction', data.introduction);
+  formData.append('description', data.description);
+  formData.append('category', data.category);
+  formData.append('author', data.author);
+  formData.append('author_image', data.author_image);
+
+  if (image) {
+    formData.append('image', image);
+  } else {
+    formData.append('image', new Blob([], { type: 'text/plain' }), 'placeholder.jpg'); // Dummy file name
+  }
+
+  try {
+
+    await toast.promise(
+      axios
+        .post('/api/blog', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
-        }).then(response => {
+        })
+        .then((response) => {
           if (response.data.success) {
             toast.success(response.data.msg);
-            setImage(false);
+            setImage(null); // Reset image state
             setData({
               title: '',
               introduction: '',
               description: '',
               category: 'Technology',
               author: 'Fatih Yuksel',
-              author_image: '/admin-profile.png',          
-            })
+              author_image: '/admin-profile.png',
+            });
           } else {
-
             throw new Error('Error: ' + response.data.msg);
           }
         }),
-        {
-          pending: 'Submitting your blog...',
-          success: 'Blog added successfully! Redirecting...',
-          error: 'An error occurred while submitting the form',
-        }
-      );
-      
-      setTimeout(() => {
-        router.push('/admin/blog-list');
-      }, 2000); 
-    } catch (error) {
-      console.error('There was an error!', error);
-    }
-  };
+      {
+        pending: 'Submitting your blog...',
+        success: 'Blog added successfully! Redirecting...',
+        error: 'An error occurred while submitting the form',
+      }
+    );
+
+    setTimeout(() => {
+      router.push('/admin/blog-list');
+    }, 2000);
+  } catch (error) {
+    console.error('There was an error!', error);
+  }
+};
 
   return (
     <form onSubmit={onSubmitHandler} className="pt-5 px-5 sm:pt-12 sm:pl-16">
